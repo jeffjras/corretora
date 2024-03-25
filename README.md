@@ -8,14 +8,14 @@
 2. [**Partes do Projeto**](#2-Partes-do-Projeto)
 3. [**Proposta de Modernização**](#3-Proposta-de-Modernização)
 4. [**Respostas aos Questionamentos**](#4-Respostas-aos-Questionamentos)
-5. [**Observações Importantes - Projeto simplificado**](#5-Observações-Importantes - Projeto simplificado)
-6. [**Visão Macro dos Servivos e Microservicos**](#5-Visão-Macro-dos-Servivos-e-Microservicos)
-7. [**Modelo de Dados e Tabelas**](#6-Modelo-de-Dados-e-Tabelas)
-8. [**Execução da Criação de Serviços na Conta da AWS**](#7-Execução-da-Criação-de-Serviços-na-Conta-da-AWS)
-9. [**Código Fonte e Repositórios**](#8-Código-Fonte-e-Repositórios)
-10. [**SOBRE O NatGateway**](#9-SOBRE-O-NatGateway)
-11. [**Lambda Function**](#10-Lambda-Function)
-12. [**Experiência**](#10-Experiência)
+5. [**Observações Importantes**](#5-Observações-Importantes)
+6. [**Visão Macro dos Servivos e Microservicos**](#6-Visão-Macro-dos-Servivos-e-Microservicos)
+7. [**Modelo de Dados e Tabelas**](#7-Modelo-de-Dados-e-Tabelas)
+8. [**Execução da Criação de Serviços na Conta da AWS**](#8-Execução-da-Criação-de-Serviços-na-Conta-da-AWS)
+9. [**Código Fonte e Repositórios**](#9-Código-Fonte-e-Repositórios)
+10. [**SOBRE O NatGateway**](#10-SOBRE-O-NatGateway)
+11. [**Lambda Function**](#11-Lambda-Function)
+12. [**Experiência**](#12-Experiência)
 
 ---
 
@@ -238,7 +238,7 @@ Você deve modelar e implementar uma solução em núvem pública seguindo princ
 - qualidade de código - Sim, através de abordagens simples mas funcionais com reuso e manutenibilidade 
 - estilos arquiteturais - Sim, os padrões já conhecidos MVC, Microserviços, Eventos e por dentro da aplicação alguns como singleton, chain of responsability
 
-## 5. Observações Importantes (projeto simplificado)
+## 5. Observações Importantes
 
 1. Foi escolhida nesta jornada de modernização a Cloud AWS por ser utilizada no banco Itaú consequentemente melhor avaliada e também por ser um provedor de serviços essenciais de conhecimento do candidato;
 
