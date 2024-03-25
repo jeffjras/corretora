@@ -23,7 +23,7 @@
 
 Foi pensando preliminarmente em desenvolver uma aplicação completa dos fluxos de cotação, seguro de veículo, apólices entre outros, portanto, foram necessários estudar alguns formulários com dados de clientes, propostas de cotação, apólice de seguros, dados de seguradora e corretora e suas diferença operacionais.
 
-O projeto consiste de um módulo para subir toda a infraestrutura na Cloud AWS e dois microserviços que apoiam o fluxo do sistema legado da corretora e seguradora. Existe ainda um projeto base que foi concebido no início para abranger mais dados sobre o domínio da aplicação qeue foi depreciado ao longo do desenvolvimento.
+O projeto consiste em um módulo para subir toda a infraestrutura na Cloud AWS e dois microserviços que apoiam o fluxo do sistema legado da corretora e seguradora. Existe ainda um projeto base que foi concebido no início para abranger mais dados sobre o domínio da aplicação qeue foi depreciado ao longo do desenvolvimento.
 
 O projeto foi desenhado com um modelo macro e depois detalhado para avaliar quais ferramentas, recursos e serviços seriam desenvolvidos. Foi projetado um digrama modernizado da aplicação e propostos alguns elementos que iriam transformar o fluxo legado para algo mais gerenciável, robusto, eficiente e moderno através da Cloud AWS.
 
