@@ -8,7 +8,7 @@
 2. [**Partes do Projeto**](#2-Partes-do-Projeto)
 3. [**Proposta de Modernização**](#3-Proposta-de-Modernização)
 4. [**Respostas aos Questionamentos**](#4-Respostas-aos-Questionamentos)
-5. [**Observações Importantes (projeto simplificado)**](#5-Observações-Importantes-(projeto simplificado))
+5. [**Observações Importantes - Projeto simplificado**](#5-Observações-Importantes - Projeto simplificado)
 6. [**Visão Macro dos Servivos e Microservicos**](#5-Visão-Macro-dos-Servivos-e-Microservicos)
 7. [**Modelo de Dados e Tabelas**](#6-Modelo-de-Dados-e-Tabelas)
 8. [**Execução da Criação de Serviços na Conta da AWS**](#7-Execução-da-Criação-de-Serviços-na-Conta-da-AWS)
