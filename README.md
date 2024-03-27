@@ -110,9 +110,9 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
    - Evidências de criação do ambiente e execução com telas
    - Conceitos dos principais serviços AWS
 
-* As imagens se encontram na pasta [Imagens][https://github.com/jeffjras/portfolio/tree/challenge/images]
+* As imagens se encontram na pasta images [https://github.com/jeffjras/portfolio/tree/challenge/images]
 * O código fonte está em repositórios do Github
-* Os artefatos como banco de dados, collections insomnia e outros se encontram na pasta [Files][https://github.com/jeffjras/portfolio/tree/challenge/files]
+* Os artefatos como banco de dados, collections insomnia e outros se encontram na pasta files [https://github.com/jeffjras/portfolio/tree/challenge/files]
 
 ## 3. Proposta de Modernização
 
