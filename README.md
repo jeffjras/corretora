@@ -1,6 +1,6 @@
 <h1 align="center">
     CHALLENGE - SR. SOFTWARE ENGINEER
-    Jefferson Junior
+    Jefferson Junior 
 </h1>
 
 ## Índice
@@ -27,28 +27,28 @@ O projeto consiste em um módulo para subir toda a infraestrutura na Cloud AWS e
 
 O projeto foi desenhado com um modelo macro e depois detalhado para avaliar quais ferramentas, recursos e serviços seriam desenvolvidos. Foi projetado um digrama modernizado da aplicação e propostos alguns elementos que iriam transformar o fluxo legado para algo mais gerenciável, robusto, eficiente e moderno através da Cloud AWS.
 
-- qualidade de legibilidade de código
+- Qualidade de legibilidade de código
 
 Foi pensando em desenvolver dois projetos (project01 e project02) que fossem representados pelos atores no negócio mas ao mesmo tempo como domínio de aplicação com os serviços necessários então estes projetos são os aws_microservice01 e aws_microservice02 que representam a corretora e seguradora respectivamente. A estrutura de código foi granulada em pacotes e suas configurações foram mínimas na IDE.
 
-- cobertura de testes
+- Cobertura de testes
 
 Embora as premissas não terem abordado a quantidade mínima de cobetura de código as aplicações tiverama uma quantidade talvez abaixo dos 50% e sendo aplicado mais na versão maior que antes foi criada pensando em todos os serviços juntos antes de se pensar na ideia de fragmentar.
 
-- aplicabilidade de padrões de projetos
+- Cplicabilidade de padrões de projetos
 
 Alguns padrões ficaram mais implicitos pelo uso do SpringBoot até pela quantidade de classes do projeto simplificado mas na rotina de persitência do Dynamo e MySQL alguns padrões aumentariam a consistência e diminuiriam o acoplamento como Factory Method, Abastract Factory, Singleton, Facade e Adapter. 
 
-- arquitetura dos apps
+- Arquitetura dos apps
 
 Foi desenvolvida principalmente a arquitetura e microserviços para os apps.
 
-- desenho de arquitetura da solução modernizada
+- Desenho de arquitetura da solução modernizada
 
 Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação anexa ao projeto.
 
 
-#Termos utilizados no projeto:
+**Termos utilizados no projeto**:
 
 1. Product (Cotacao/Seguro/Venda/Apolice)
 2. Invoice (fatura)
@@ -57,36 +57,37 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
 5. EventLog (Eventos de Log)
 6. Queue (Fila - Standart/DLQ)
 
-#Conceitos Importantes:
+**Conceitos Importantes**:
 
-1. ECS - Elastic Container Service é um serviço de orquestração gerenciado. AWS usa recursos prórpios para tornar esta orquestração dispinível, integrada e verificada;
+1. **ECS** - Elastic Container Service é um serviço de orquestração gerenciado. AWS usa recursos prórpios para tornar esta orquestração dispinível, integrada e verificada;
 
-2. AWS Fargate é um recurso que elimina a necessidade de provisionar e gerenciar servidores e aumenta a segurança com apps isolados. Como por exemplo o gerenciamento de recursos com instâncias EC2, configuração de VPC;
+2. **AWS Fargate** é um recurso que elimina a necessidade de provisionar e gerenciar servidores e aumenta a segurança com apps isolados. Como por exemplo o gerenciamento de recursos com instâncias EC2, configuração de VPC;
 
-3. EC2 - Elastic Compute Cloud é uma instância de servidor virtual que permite executar aplicativos na infra AWS;
+3. **EC2** - Elastic Compute Cloud é uma instância de servidor virtual que permite executar aplicativos na infra AWS;
    - Instância com computação acelerada/instâncias de GPU para computaçao de uso geral
    - Instâncias de GPU gráficas para gráficos 
    - Instâncias Computacionais em hardware programável FPGA para workloads científicos avançados
-4. VPC - Nuvem Virtual Privada é uma rede virtual dedicada à conta AWS. Está isolada logicamente de outras redes virtuais, possui um intervalo de IP para a VPC, podendo ter Sub-Rede, adcionar Gateways, associar grupos de segurança. Uma Sub-Rede é um intervalo de endereços IP na VPC;
+4. **VPC** - Nuvem Virtual Privada é uma rede virtual dedicada à conta AWS. Está isolada logicamente de outras redes virtuais, possui um intervalo de IP para a VPC, podendo ter Sub-Rede, adcionar Gateways, associar grupos de segurança. Uma Sub-Rede é um intervalo de endereços IP na VPC;
 
-5. Cluster é um conjunto de máquinas logicamente agrupadas onde os containeres irão rodar;
+5. **Cluster** é um conjunto de máquinas logicamente agrupadas onde os containeres irão rodar;
 
-6. Task Definition é a especificação de quantos e quais containeres, recursos computacionais, volumes e outros;
+6. **Task Definition** é a especificação de quantos e quais containeres, recursos computacionais, volumes e outros;
 
-7. Task é a operação que será realizada pelo container que foi levantado configurada através de Task Definition;
+7. **Task** é a operação que será realizada pelo container que foi levantado configurada através de Task Definition;
 
-8. Service é o agrupdor de tarefas que define quantos e quais tarefas serão executadas simultaneamente;
+8. **Service** é o agrupdor de tarefas que define quantos e quais tarefas serão executadas simultaneamente;
    - Se alguma tarefa falhar o Scheduler levanta uma nova e configura novos serviços de rede, loadbalancer;
    
-9. Load Balancer é um balanceador de carga que distribui o tráfego para vários destinos como instâncias EC2 e diversas zonas de disponibilidade que gera maior disponibilidade de app;
+9. **Load Balancer** é um balanceador de carga que distribui o tráfego para vários destinos como instâncias EC2 e diversas zonas de disponibilidade que gera maior disponibilidade de app;
 10. Escala Horizontal é a adição de mais nodes, máquinas que irão ampliar os recursos;
 11. Escala Vertical é a adição de mais recurso de hardware como memória, processador, CPU;
 
 
 ## 2. Partes do Projeto
 
-*O Desafio foi composto de três partes distintas:
-1. Criação, configuração e administração da infraestrutura AWS
+**O Desafio foi composto de três partes distintas**
+
+1. *Criação, configuração e administração da infraestrutura AWS*
    - Criação da Imagem Docker (localstack, vpc, container, Rds, Sns, Sqs, DynamoBD, S3)
    - Criação da Versão/Tag Docker Hub (aws_microservice01, aws_microservice02)
    - Deploy Services (Service01, Service02)
@@ -94,22 +95,24 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
    - AWS CDK 2.133.0 (corretora_cdk)
    - Java 17
    - MySQL 5.7 / *8 (teste da versão mais atual) 
-2. Implementação dos microserviços e projetos de infra
+
+2. *Implementação dos microserviços e projetos de infra*
    - criação da imagem docker (corretora e seguradora)
    - criação da infra AWS (corretora_cdk e *seguradora_cdk)
    - criação do aws_microservico01
    - criação do aws_microservico02
    * decidiu-se centralizar toda a infra de criação das stacks em corretora_cdk para ambos os projetos de infra
-3. Escrita de documentação técnica
+
+3. *Escrita de documentação técnica*
    - Desenho Arquitetura Modernizada
    - Diagrams E-R/Class
    - Evidências de Teste
    - Evidências de criação do ambiente e execução com telas
    - Conceitos dos principais serviços AWS
-* As imagens se encontram na pasta ![Imagens](images/)
-* Os documentos se encontram na pasta ![Documentos](docs/)
+
+* As imagens se encontram na pasta ![Imagens][https://github.com/jeffjras/portfolio/tree/challenge/images]
 * O código fonte está em repositórios do Github
-* Os artefatos como banco de dados, collections insomnia e outros se encontram na pasta /files
+* Os artefatos como banco de dados, collections insomnia e outros se encontram na pasta ![Files] [https://github.com/jeffjras/portfolio/tree/challenge/files]
 
 ## 3. Proposta de Modernização
 
@@ -118,11 +121,16 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
    - criar a função lambda em python (otimizada para gravar os dados no RDS/MySQL) para consumir os dados da fila SQS
    - criar a função programada usando uma expressão CRON = a cada 1h de todos os dias da semana, gravar no S3 e após gravar no banco de dados
 
-Associação da fila SQS com a LambdaFunction (Mapeamento da Origem do Evento)
-FILA SQS: ProductEvents (LambdaRDSQueue)
-LAMBDA FUNCTION
-Name: LambdaFunctionWithRDS
-Opção: Adicionar Gatilho > Escolher Amazon SQS para origem > Escolher o nome da fila > Tamanho do Lote 1
+**Uso de LambdaFunction**
+
+Associação da fila SQS com a LambdaFunction (*Mapeamento da Origem do Evento*)
+FILA SQS: *ProductEvents* (LambdaRDSQueue)
+
+**LAMBDA FUNCTION**
+
+Name: LambdaFunctionWithRDS 
+
+Adicionar Gatilho > Escolher Amazon SQS para origem > Escolher o nome da fila > Tamanho do Lote 1
 
 Teste na Fila Amazon SQS (ProductEvents)
 JSON para enviar e receber mensagens
@@ -152,8 +160,9 @@ db_name = os.environ['DB_NAME']
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-# create the database connection outside of the handler to allow connections to be
-# re-used by subsequent function invocations.
+**create the database connection outside of the handler to allow connections to be**
+**re-used by subsequent function invocations**
+
 try:
 	    conn = pymysql.connect(host=rds_proxy_host, user=user_name, passwd=password, db=db_name, connect_timeout=5)
 except pymysql.MySQLError as e:
@@ -195,7 +204,7 @@ JSON do Evento
     {
       "messageId": "059f36b4-87a3-44ab-83d2-661975830a7d",
       "receiptHandle": "AQEBwJnKyrHigUMZj6rYigCgxlaS3SLy0a...",
-      "body": "{\n     \"CustID\": 1021,\n     \"Name\": \"Martha Rivera\"\n}",
+      "body": "{\n     \"ProdID\": 6,\n     \"Name\": \"Product SeguroX\"\n}",
       "attributes": {
         "ApproximateReceiveCount": "1",
         "SentTimestamp": "1545082649183",
@@ -205,8 +214,8 @@ JSON do Evento
       "messageAttributes": {},
       "md5OfBody": "e4e68fb7bd0e697a0ae8f1bb342846b3",
       "eventSource": "aws:sqs",
-      "eventSourceARN": "arn:aws:sqs:us-west-2:123456789012:my-queue",
-      "awsRegion": "us-west-2"
+      "eventSourceARN": "arn:aws:sqs:us-west-2:123456789012:ProducEvents",
+      "awsRegion": "us-west-1"
     }
   ]
 }
@@ -352,9 +361,8 @@ Servico02
 	4. gera arquivo de retorno
 	5. envia notificação cliente 
 	
-*corretora* 
-Detalhamento Microserviço Java
-===============================
+**Detalhamento Microserviço Java** - *corretora* 
+
 cotacao / contracao / vendas / exportacao
   grava dados de vendas no BD corretora
   extrai dados de vendas com LambdaFunction Corretora (Scheduled - Cron)
@@ -363,22 +371,24 @@ cotacao / contracao / vendas / exportacao
   coleta dados de novas vendas no S3 Corretora
   envia dados de vendas do S3 Corretora para FTP ou S3 da Seguradora
     
-*seguradora*
-Detalhamento Microserviço Java
-===============================
-importacao
-   coleta dados do FTP ou S3 da corretora
-   gera arqivo em DIR ou S3 da seguradora
-   extrai dados de vendas com LambdaFunction Seguradora (Scheduled - Cron)
-   grava dados de vendas no BD seguradora
-   gera arquivo de retorno no FTP ou S3 da seguradora
-   notifica cliente com a operação
 
-#FLUXO DE EXECUÇÃO DEPLOY IMAGE
+**Detalhamento Microserviço Java** - *seguradora*
+
+*Importacao*
+
+   - Coleta dados do FTP ou S3 da corretora
+   - gera arqivo em DIR ou S3 da seguradora
+   - extrai dados de vendas com LambdaFunction Seguradora (Scheduled - Cron)
+   - grava dados de vendas no BD seguradora
+   - gera arquivo de retorno no FTP ou S3 da seguradora
+   - notifica cliente com a operação
+
+**FLUXO DE EXECUÇÃO DEPLOY IMAGE**
+
 Criação do endpoint > gerar a versão pelo gerenciador de dependências (Gradle) > gerar e subir a nova imagem no DockerHub > abrir o projeto CDK e apontar a definição da tarefa para a nova imagem do docker > fazer o deployment usando o terminal do CDK
 
-> cdk deploy Vpc Cluster Service01
-> cdk destroy Vpc Cluester Service01
+    - cdk deploy Vpc Cluster Service01 (*create*)
+    - cdk destroy Vpc Cluester Service01 (*destroy*)
     
 Java: corretora
 https://hub.docker.com/repository/docker/jefjras/corretora/general
@@ -386,8 +396,9 @@ Docker Hub(jefjras): aws_price
 Java: seguradora
 Docker Hub(jefjras): aws_insurance
 
-#Serviços AWS
-1. Infraestrutura
+**Serviços AWS**
+
+1. *Infraestrutura*
    Application LoadBalancer (Security Rules / Health Check / IAM Rule / Service / Task / Task Definition / Auto Scaling / Multi Zone)
       create/update/delete data
       retrieve event logs
@@ -396,7 +407,8 @@ Docker Hub(jefjras): aws_insurance
    *Amazon API Gateway (Rate Limit / APM )
    Amazon VPC
    Amazon CloudWatch (Observability)
-2. Fluxo de operações
+
+2. *Fluxo de operações*
    Amazon S3
    Amazon SNS
    Amazon SQS
@@ -404,14 +416,16 @@ Docker Hub(jefjras): aws_insurance
 
 ## 7. Modelo de Dados e Tabelas
 
-#TABELAS AWS RDS MySQL schema challenge 
-> AWS RDS senha rds123456
+**TABELAS AWS RDS MySQL schema challenge** 
+> *Serviço AWS RDS*
+
+    - cdk deploy --parameters Rds:databasePassword=rds123456 Rds Service01
 Toda a operação se resumiu em apenas duas tabelas por razões de custo na cloud
 1. Product (Produto - Seguro)
 2. Invoice (Fatura/Venda de seguros)
 
-#TABELAS Locais (modelo mais abrangente do negócio)
-> criadas localmente pelo cliente MySQL Workbench
+**TABELAS Locais (modelo mais abrangente do negócio)**
+ - criadas localmente pelo cliente MySQL Workbench
 *Os dados de exemplo foram obtidos conforme análise de apólice do meu seguro pessoal de veículo*:
 1. Cliente(Segurado)
 2. Condutor(condutor pode ser diferente do segurado e é submetido a questionário de avaliação de risco)
@@ -431,7 +445,6 @@ Toda a operação se resumiu em apenas duas tabelas por razões de custo na clou
 16. *Apolice (Documento final com todos os dados necessários)
 
 ## 8. Execução da Criação de Serviços na Conta da AWS
-
 
 VPC
 Stack ARN:
@@ -587,14 +600,14 @@ https://github.com/jeffjras/portfolio/
 
 ## 10. SOBRE O NatGateway
 
-optou-se pela criação da VPC sem a utilização do NatGateway, como mostra o trecho a seguir:
+- Optou-se pela criação da VPC sem a utilização do NatGateway, como mostra o trecho a seguir:
 
 vpc = Vpc.Builder.create(this, "Vpc01")
       .maxAzs(2)
       .natGateways(0)
       .build();
 
-Significa que agora é necessário configurar que as instâncias da aplicação no ECS, expostas pelo Application Load Balancer, possuam um endereço IP público, pois a VPC não possui o NatGateway.
+*Significa que agora é necessário configurar que as instâncias da aplicação no ECS, expostas pelo Application Load Balancer, possuam um endereço IP público, pois a VPC não possui o NatGateway.*
 
 ## 11. Lambda Function
 
@@ -652,7 +665,7 @@ LAMBDA TEST EVENT
       {
         "eventVersion": "2.1",
         "eventSource": "aws:s3",
-        "awsRegion": "us-east-2",
+        "awsRegion": "us-east-1",
         "eventTime": "2024-03-20T19:37:27.192Z",
         "eventName": "ObjectCreated:Put",
         "userIdentity": {
@@ -669,14 +682,14 @@ LAMBDA TEST EVENT
           "s3SchemaVersion": "1.0",
           "configurationId": "828aa6fc-f7b5-4305-8584-487c791949c1",
           "bucket": {
-            "name": "nome-do-seu-bucket-s3", 
+            "name": "S3InvoiceTopic", 
             "ownerIdentity": {
               "principalId": "A3I5XTEXAMAI3E"
             },
             "arn": "arn:aws:s3:::lambda-artifacts-deafc19498e3f2df"
           },
           "object": {
-            "key": "dados-estados-brasil.json",
+            "key": "dados-invoice.json",
             "size": 1305107,
             "eTag": "b21b84d653bb07b05b1e6b33684dc11b",
             "sequencer": "0C0F6F405D6ED209E1"
@@ -722,11 +735,11 @@ def lambda_handler(event, context):
             
             tabela = dynamodb.Table('product-events')
             tabela.put_item(Item={
-                'pk': registros['Região'],
-                'sk': registros['Sigla'],
-                'eventType': registros['Estado'],
-                'productId': str(registros['População']),
-                'timestamp': str(registros['PIB (R$)'],
+                'pk': registros['pk'],
+                'sk': registros['sk'],
+                'eventType': registros['eventType'],
+                'productId': str(registros['productId']),
+                'timestamp': str(registros['timestamp'],
                 'ttl': str(registros['ttl']
                 'username': str(registros['username'])
             })
