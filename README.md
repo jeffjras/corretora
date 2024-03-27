@@ -364,10 +364,10 @@ filter @message like /Product event received/
 	2. criar arquivo sequencial de vendas
 	3. envio arquivo bucket S3 corretora
 
-Servico02 - seguradora_microserviço_1 / seguradora_microserviço_2 (instancias/zonas)
-seguradora_microserviço_1 / seguradora_microserviço_2
+- Servico02 - *seguradora_microserviço_1* / *seguradora_microserviço_2*   (instancias/zonas)
+  *seguradora_microserviço_1* / *seguradora_microserviço_2*
 	1. troca de arquivos
-Servico02
+- Servico02
 	1. importação de arquivo do bucket S3 corretora para o bucket S3 seguradora
 	2. ler de forma agendada (CRON) dados de vendas do bucket S3 seguradora
 	3. grava registros em banco de dados RDS
