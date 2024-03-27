@@ -279,6 +279,8 @@ Environment variables: spring.profiles.active=local
 @Profile("local") roda local
 9. Estrutura de topicos para Service02 é consumir os eventos de produtos publicados pela aplicação aws_microservice01 constituido por Fila SQS e banco de dados do DynamoDB;	
 SNS/SQS Publish Event
+
+```
 JSON
 {
 	"productId":1,
@@ -290,8 +292,11 @@ Evelope
 	"eventType":"PRODUCT_CREATED",
 	"data":"{\"productId\":1, \"code\":\"COD1\", \"username\":\"jefferson\"}"
 }
+```
 
 Tabela product-events DynamoDB: pk (partition key) + sk (sort key) = primary key / ttl = time to live (timestamp) 
+
+```
 {
 	"pk":"COD01",
 	"sk":"ORDER_CREATED_160642570300",
@@ -302,15 +307,17 @@ Tabela product-events DynamoDB: pk (partition key) + sk (sort key) = primary key
 	"ttl":"1606426003"
 
 }
+```
 
-O evento de produto recebido pela aplicação aws_microservice02 contém a identificação única da mensagem, ou messageId, publicada pela aplicação aws_microservice01, que gerou esse evento;
+O evento de produto recebido pela aplicação *aws_microservice02* contém a identificação única da mensagem, ou messageId, publicada pela aplicação *aws_microservice01*, que gerou esse evento;
 
-Seguradora consulta dados e consome na forma:
+*Seguradora consulta dados e consome na forma:*
 
-api/events -> lista todos os eventos (de seu banco de dados DynamoDB)
-api/events/{code} -> lista todos os eventos por code
-api/events/{code}/{event} -> lista todos os eventos por code e event
+  - api/events -> lista todos os eventos (de seu banco de dados DynamoDB)
+  - api/events/{code} -> lista todos os eventos por code
+  - api/events/{code}/{event} -> lista todos os eventos por code e event
 
+```
 InvoiceSale.txt (arquivo no bucket S3):
 {
 	"invoiceNumber":"123"
@@ -319,26 +326,32 @@ InvoiceSale.txt (arquivo no bucket S3):
 	"productId":1
 	"quantity":1
 }
+```
 
--> Obtendo o arquivo via URL API (que pode ser scheduled cron job com lambda funcion na app aws_microservive01)
-1. POST em http://[ENDERECO_AWS_OU_LOCAL]:8080/api/invoices
+ - Obtendo o arquivo via URL API (que pode ser scheduled cron job com lambda funcion na app aws_microservive01)
+
+  1. POST em http://[ENDERECO_AWS_OU_LOCAL]:8080/api/invoices
 response:
+```
 {
 	"url": "http://ENDERECO_AWS_OU_LOCAL/pcs-invoice-seguradora/STRING_BUCKET"
 	"expirationTime": 1618067534
 }
+```
 2. UPLOAD com PUT na URL e BODY escolher o binary file;
 3. Para visualizar GET em http://[ENDERECO_AWS_OU_LOCAL]:8080/api/invoices
 
 
-#Para consultar o consumo de mensagens pelo CloudWatch
+**Para consultar o consumo de mensagens pelo CloudWatch**
 
-- Insights > Show fewer chosen log groups
-fields @timestamp, @message
+- Insights  
+```
+Show fewer chosen log groups*
+            fields @timestamp, @message
 sort @timestamp desc
 limit 20
 filter @message like /Product event received/
-
+```
 
 ## 6. Visão Macro dos Servivos e Microservicos
 
