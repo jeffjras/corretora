@@ -340,13 +340,13 @@ limit 20
 filter @message like /Product event received/
 
 
-##6. Visão Macro dos Servivos e Microservicos
+## 6. Visão Macro dos Servivos e Microservicos
 
-Servico01 - corretora_microserviço_1 / corretora_microserviço_2 (instancias/zonas)
-corretora_microserviço_1 / corretora_microserviço_2
+- Servico01 - *corretora_microserviço_1* / *corretora_microserviço_2* (instancias/zonas)
+*corretora_microserviço01* / *corretora_microserviço02*
 	1. cotacao
 	2. contratação/venda
-Servico01
+- Servico01
 	1. ler de forma agendada (CRON) registros de banco de dados
 	2. criar arquivo sequencial de vendas
 	3. envio arquivo bucket S3 corretora
@@ -627,6 +627,7 @@ JSON dados da tabela Dynamo
   }
 ]
 
+```
 CUSTOM_POLICY_S3DymanoDB.json
 {
     "Version": "2012-10-17",
@@ -649,7 +650,8 @@ CUSTOM_POLICY_S3DymanoDB.json
         }
     ]
 }
-
+```
+```
 LAMBDA TEST EVENT
 
 {
@@ -690,12 +692,13 @@ LAMBDA TEST EVENT
       }
     ]
   }
+```
 
+```
 import json
 import urllib.parse
 from pprint import pprint
 import boto3
-
 def lambda_handler(event, context):
     
     s3 = boto3.client('s3')
@@ -740,6 +743,7 @@ def lambda_handler(event, context):
         print(e)
         print('Error getting object {} from bucket {}.'.format(nomearquivo, bucket))
         raise e
+```
 
 ## 12. Experiência
 
