@@ -21,7 +21,7 @@
 
 ## 1. Projeto Challenge
 
-Foi pensando preliminarmente em desenvolver uma aplicação completa dos fluxos de cotação, seguro de veículo, apólices entre outros, portanto, foram necessários estudar alguns formulários com dados de clientes, propostas de cotação, apólice de seguros, dados de seguradora e corretora e suas diferença operacionais.
+Foi pensado preliminarmente em desenvolver uma aplicação completa dos fluxos de cotação, seguro de veículo, apólices entre outros, portanto, foram necessários estudar alguns formulários com dados de clientes, propostas de cotação, apólice de seguros, dados de seguradora e corretora e suas diferença operacionais.
 
 O projeto consiste em um módulo para subir toda a infraestrutura na Cloud AWS e dois microserviços que apoiam o fluxo do sistema legado da corretora e seguradora. Existe ainda um projeto base que foi concebido no início para abranger mais dados sobre o domínio da aplicação qeue foi depreciado ao longo do desenvolvimento.
 
@@ -85,7 +85,7 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
 
 ## 2. Partes do Projeto
 
-**O Desafio foi composto de três partes distintas**
+**O desafio foi composto de três partes distintas**
 
 1. *Criação, configuração e administração da infraestrutura AWS*
    - Criação da Imagem Docker (localstack, vpc, container, Rds, Sns, Sqs, DynamoBD, S3)
@@ -101,7 +101,7 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
    - criação da infra AWS (corretora_cdk e *seguradora_cdk)
    - criação do aws_microservico01
    - criação do aws_microservico02
-   * decidiu-se centralizar toda a infra de criação das stacks em corretora_cdk para ambos os projetos de infra
+   * decidiu-se centralizar toda a criação das stacks em corretora_cdk para ambos os projetos de infra na Cloud AWS.
 
 3. *Escrita de documentação técnica*
    - Desenho Arquitetura Modernizada
@@ -110,9 +110,9 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
    - Evidências de criação do ambiente e execução com telas
    - Conceitos dos principais serviços AWS
 
-* As imagens se encontram na pasta ![Imagens][https://github.com/jeffjras/portfolio/tree/challenge/images]
+* As imagens se encontram na pasta [Imagens][https://github.com/jeffjras/portfolio/tree/challenge/images]
 * O código fonte está em repositórios do Github
-* Os artefatos como banco de dados, collections insomnia e outros se encontram na pasta ![Files] [https://github.com/jeffjras/portfolio/tree/challenge/files]
+* Os artefatos como banco de dados, collections insomnia e outros se encontram na pasta [Files][https://github.com/jeffjras/portfolio/tree/challenge/files]
 
 ## 3. Proposta de Modernização
 
@@ -582,21 +582,13 @@ https://github.com/jeffjras/aws_microservice02
 
 https://github.com/jeffjras/corretora_cdk
 
-[corretora] [Primeiro projeto feito para contemplar todas as tabelas criadas]
+[corretora - Java SpringBoot] [**primeiro projeto feito para contemplar todas as tabelas criadas**]
 
-https://github.com/jeffjras/corretora
+ - https://github.com/jeffjras/corretora
 
-[imagens] [https://github.com/jeffjras/portfolio/tree/challenge/images]
+ - Imagens - branch challenge [https://github.com/jeffjras/portfolio/tree/challenge/images]
 
-Branch: challenge
-Diretório: images
-https://github.com/jeffjras/portfolio/
-
-[files] [https://github.com/jeffjras/portfolio/tree/challenge/files]
-
-Branch: challenge
-Diretório: files
-https://github.com/jeffjras/portfolio/
+- Files- branch challenge [https://github.com/jeffjras/portfolio/tree/challenge/files]
 
 ## 10. SOBRE O NatGateway
 
