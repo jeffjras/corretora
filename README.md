@@ -133,16 +133,17 @@ FILA SQS: *ProductEvents* (LambdaRDSQueue)
 
 Name: LambdaFunctionWithRDS 
 
-Adicionar Gatilho > Escolher Amazon SQS para origem > Escolher o nome da fila > Tamanho do Lote 1
+ - Adicionar Gatilho > Escolher Amazon SQS para origem > Escolher o nome da fila > Tamanho do Lote 1
 
 Teste na Fila Amazon SQS (ProductEvents)
 JSON para enviar e receber mensagens
 Enviar Mensagem Body:
+```
 {
     "ProdID": 1054,
     "Name": "SeguroX"
 }
-
+```
 Exemplo de Lambda -  Runtime com Python - Insert Data RDS
  - Add Trigger → Procurar por S3 → Selecionar
     Bucket → Procurar o bucket que foi criado → Selecionar.
