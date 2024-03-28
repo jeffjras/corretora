@@ -167,7 +167,7 @@ logger.setLevel(logging.INFO)
 
 ```
 
-**create the database connection outside of the handler to allow connections to be**
+- **Create the database connection outside of the handler to allow connections to be**
 **re-used by subsequent function invocations**
 
 ```
