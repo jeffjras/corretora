@@ -623,7 +623,7 @@ vpc = Vpc.Builder.create(this, "Vpc01")
 *Significa que agora é necessário configurar que as instâncias da aplicação no ECS, expostas pelo Application Load Balancer, possuam um endereço IP público, pois a VPC não possui o NatGateway.*
 
 ## 11. Lambda Function
-
+```
 JSON dados da tabela Dynamo
 [
   {
@@ -647,6 +647,7 @@ JSON dados da tabela Dynamo
     
   }
 ]
+```
 
 ```
 CUSTOM_POLICY_S3DymanoDB.json
@@ -713,6 +714,7 @@ LAMBDA TEST EVENT
       }
     ]
   }
+  
 ```
 
 ```
