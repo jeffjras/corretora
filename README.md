@@ -144,17 +144,18 @@ Enviar Mensagem Body:
 }
 
 Exemplo de Lambda -  Runtime com Python - Insert Data RDS
-Add Trigger → Procurar por S3 → Selecionar
-Bucket → Procurar o bucket que foi criado → Selecionar.
+ - Add Trigger → Procurar por S3 → Selecionar
+    Bucket → Procurar o bucket que foi criado → Selecionar.
 Event type → Escolher PUT.
 -----------------------------
+```
 import sys
 import logging
 import pymysql
 import json
 import os
 
-# rds settings
+# Rds Settings
 user_name = os.environ['USER_NAME']
 password = os.environ['PASSWORD']
 rds_proxy_host = os.environ['RDS_PROXY_HOST']
@@ -163,9 +164,12 @@ db_name = os.environ['DB_NAME']
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
+```
+
 **create the database connection outside of the handler to allow connections to be**
 **re-used by subsequent function invocations**
 
+```
 try:
 	    conn = pymysql.connect(host=rds_proxy_host, user=user_name, passwd=password, db=db_name, connect_timeout=5)
 except pymysql.MySQLError as e:
@@ -199,9 +203,9 @@ def lambda_handler(event, context):
     conn.commit()
 
     return "Added %d items to RDS for MySQL table" %(item_count)
-    
+```    
 JSON do Evento
-
+```
 {
   "Records": [
     {
@@ -222,7 +226,7 @@ JSON do Evento
     }
   ]
 }
-
+```
 
 ## 4. Respostas aos Questionamentos
 
