@@ -116,6 +116,9 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
 
 ## 3. Proposta de Modernização
 
+![Arquitetura Modernizada](diagram1.png)
+![Complemento Diagrama](diagram2.png)
+
 1. Exclusão do uso de FTP
 2. Ao rodar cron/job via lambda poderá feita de duas maneiras (abordagens)
    - criar a função lambda em python (otimizada para gravar os dados no RDS/MySQL) para consumir os dados da fila SQS
