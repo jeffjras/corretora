@@ -118,6 +118,7 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
 
 ![Arquitetura Modernizada](diagram1.png)
 ![Complemento Diagrama](diagram2.png)
+![Diagrama Macro View C4-Model](diagram3.jpeg)
 
 1. Exclusão do uso de FTP
 2. Ao rodar cron/job via lambda poderá feita de duas maneiras (abordagens)
@@ -714,7 +715,7 @@ LAMBDA TEST EVENT
       }
     ]
   }
-  
+
 ```
 
 ```
