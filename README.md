@@ -29,23 +29,23 @@ O projeto consiste em um módulo para subir toda a infraestrutura na Cloud AWS e
 
 O projeto foi desenhado com um modelo macro e depois detalhado para avaliar quais ferramentas, recursos e serviços seriam desenvolvidos. Foi projetado um digrama modernizado da aplicação e propostos alguns elementos que iriam transformar o fluxo legado para algo mais gerenciável, robusto, eficiente e moderno através da Cloud AWS.
 
-- Qualidade de legibilidade de código
+- *Qualidade de legibilidade de código*
 
 Foi pensando em desenvolver dois projetos (project01 e project02) que fossem representados pelos atores no negócio mas ao mesmo tempo como domínio de aplicação com os serviços necessários então estes projetos são os aws_microservice01 e aws_microservice02 que representam a corretora e seguradora respectivamente. A estrutura de código foi granulada em pacotes e suas configurações foram mínimas na IDE.
 
-- Cobertura de testes
+- *Cobertura de testes*
 
 Embora as premissas não terem abordado a quantidade mínima de cobetura de código as aplicações tiverama uma quantidade talvez abaixo dos 50% e sendo aplicado mais na versão maior que antes foi criada pensando em todos os serviços juntos antes de se pensar na ideia de fragmentar.
 
-- Cplicabilidade de padrões de projetos
+- *Aplicabilidade de padrões de projetos*
 
 Alguns padrões ficaram mais implicitos pelo uso do SpringBoot até pela quantidade de classes do projeto simplificado mas na rotina de persitência do Dynamo e MySQL alguns padrões aumentariam a consistência e diminuiriam o acoplamento como Factory Method, Abastract Factory, Singleton, Facade e Adapter. 
 
-- Arquitetura dos apps
+- *Arquitetura dos apps*
 
 Foi desenvolvida principalmente a arquitetura e microserviços para os apps.
 
-- Desenho de arquitetura da solução modernizada
+- *Desenho de arquitetura da solução modernizada*
 
 Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação anexa ao projeto.
 
@@ -81,8 +81,10 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
    - Se alguma tarefa falhar o Scheduler levanta uma nova e configura novos serviços de rede, loadbalancer;
    
 9. **Load Balancer** é um balanceador de carga que distribui o tráfego para vários destinos como instâncias EC2 e diversas zonas de disponibilidade que gera maior disponibilidade de app;
-10. Escala Horizontal é a adição de mais nodes, máquinas que irão ampliar os recursos;
-11. Escala Vertical é a adição de mais recurso de hardware como memória, processador, CPU;
+
+10. **Escala Horizontal** é a adição de mais nodes, máquinas que irão ampliar os recursos;
+
+11. **Escala Vertical** é a adição de mais recurso de hardware como memória, processador, CPU;
 
 
 ## 2. Partes do Projeto
@@ -108,7 +110,7 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
 3. *Escrita de documentação técnica*
    - Desenho Arquitetura Modernizada
    - Diagrams E-R/Class
-   - Evidências de Teste
+   - Evidências com algumas telas
    - Evidências de criação do ambiente e execução com telas
    - Conceitos dos principais serviços AWS
 
@@ -123,16 +125,16 @@ Foi disponibilizado o novo desenho da arquitetura modernizada da aplicação ane
 ![Diagrama Macro View C4-Model](diagram3.jpeg)
 
 1. Exclusão do uso de FTP
-2. Ao rodar cron/job via lambda poderá feita de duas maneiras (abordagens)
-   - criar a função lambda em python (otimizada para gravar os dados no RDS/MySQL) para consumir os dados da fila SQS
-   - criar a função programada usando uma expressão CRON = a cada 1h de todos os dias da semana, gravar no S3 e após gravar no banco de dados
+2. Processar *CRON/JOB* via lambda nos seguinte passos (abordagens de exemplo):
+   - Criar a função lambda em python (otimizada para gravar os dados no RDS/MySQL) para consumir os dados da fila SQS
+   - Criar a função programada usando uma expressão CRON = a cada 1h de todos os dias da semana, gravar no S3 e após gravar no banco de dados
 
-**Uso de LambdaFunction**
+**Definição do Uso de LambdaFunction**
 
 Associação da fila SQS com a LambdaFunction (*Mapeamento da Origem do Evento*)
 FILA SQS: *ProductEvents* (LambdaRDSQueue)
 
-**LAMBDA FUNCTION**
+**LAMBDA FUNCTION (abordagens de exemplo)**
 
 Name: LambdaFunctionWithRDS 
 
@@ -250,15 +252,15 @@ JSON do Evento
 
 # O que é esperado
 Você deve modelar e implementar uma solução em núvem pública seguindo princípios de uma arquitetura moderna:
-- 12 factors - Realizada de forma escalável e de manutenção simples com pacotes configs
-- arquitetura distribuída - Realizada através dos recursos Cloud
-- comunicação assíncrona - Realizada através dos serviços Cloud
-- serverless - Sim, Código fonte anexo para implantação da versão do LambdaFunction
-- orientada e segregada por domínio Sim, focada no domínio da aplicação
-- finops - projeto foi pensando em utilizar menor custo e consumo possível 
-- monitoramento e observabilidade - Sim, através do serviço CloudWatch
-- qualidade de código - Sim, através de abordagens simples mas funcionais com reuso e manutenibilidade 
-- estilos arquiteturais - Sim, os padrões já conhecidos MVC, Microserviços, Eventos e por dentro da aplicação alguns como singleton, chain of responsability
+- 12 factors - *Realizada de forma escalável e de manutenção simples com pacotes configs*
+- arquitetura distribuída - *Realizada através dos recursos Cloud*
+- comunicação assíncrona - *Realizada através dos serviços Cloud*
+- serverless - *Sim, Código fonte anexo para implantação da versão do LambdaFunction*
+- orientada e segregada por domínio *Sim, focada no domínio da aplicação*
+- finops - *projeto foi pensando em utilizar menor custo e consumo possível* 
+- monitoramento e observabilidade - *Sim, através do serviço CloudWatch*
+- qualidade de código - *Sim, através de abordagens simples mas funcionais com reuso e manutenibilidade* 
+- estilos arquiteturais - *Sim, os padrões já conhecidos MVC, Microserviços, Eventos e por dentro da aplicação alguns como Singleton, Chain of Responsability*
 
 ## 5. Observações Importantes
 
