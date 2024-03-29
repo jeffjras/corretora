@@ -264,6 +264,8 @@ Você deve modelar e implementar uma solução em núvem pública seguindo princ
 
 ## 5. Observações Importantes
 
+**(abordagens sobre custos e processos)**
+
 1. Foi escolhida nesta jornada de modernização a Cloud AWS por ser utilizada no banco Itaú consequentemente melhor avaliada e também por ser um provedor de serviços essenciais de conhecimento do candidato;
 
 2. No início do desenvolvimento foi elaborado um modelo com o domínio da aplicação completo que segue em anexo incluindo dados periféricos(veiculos, corretora, seguradora, pagamento, cotacao, contratacao/venda, apolice, entre outros) com as seguintes ações: 
