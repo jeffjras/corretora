@@ -15,7 +15,9 @@
 9. [**Código Fonte e Repositórios**](#9-Código-Fonte-e-Repositórios)
 10. [**SOBRE O NatGateway**](#10-SOBRE-O-NatGateway)
 11. [**Lambda Function**](#11-Lambda-Function)
-12. [**Experiência**](#12-Experiência)
+12. [**Coreografia vs Orquestração**](#12-Coreografia-vs-Orquestração)
+13. [**Padrões de Projetos**](#13-Padrões-de-Projetos)
+14. [**Experiência**](#12-Experiência)
 
 ---
 
@@ -769,7 +771,68 @@ def lambda_handler(event, context):
         raise e
 ```
 
-## 12. Experiência
+## 12. Coreografia vs Orquestração
+
+  - **Coreografia**
+
+  Enfatiza a comunicação direta e assíncrona entre os serviços. Cada serviço é autônomo e responsável por reagir a eventos e propagar alterações para outros serviços, sem depender de um componente centralizado com escalabilidade, a resiliência e o baixo acoplamento entre os serviços.
+
+  ![Coreografia](coreografia.png)
+
+  - **Orquestração**
+
+  Utiliza um componente central, conhecido como orquestrador, para controlar a interação entre os serviços. O orquestrador coordena e gerencia as chamadas entre os serviços, determinando a ordem e o fluxo de execução das operações oferece maior controle e visibilidade, mas pode criar dependências e aumentar o acoplamento entre os serviços.
+
+  ![Orquestração](orquestracao.png)
+
+
+## 13. Padrões de Projetos
+
+  - **Spring Boot**
+
+  1. *Inversion Of Control (IoC) e Dependence Injection (DI)*
+  
+      Gerencia a dependência entre os componentes, o Spring Boot gerencia essas dependências em um contêiner IoC. A injeção de dependência injeta dependências nos componentes de forma automática e transparente.
+
+  2. *MVC*
+
+      Separa a lógica de negócios, a apresentação e o controle de fluxo em diferentes componentes, torna mais fácil manter diferentes. O modelo é a representação dos dados, a visão é interface do usuário e o controlador é interação entre o modelo e a visão.
+
+  3. *Repository*
+
+      Abstrai o acesso a dados. Com Repository se pode escrever código mais modular e fácil de testar, torna mais fácil implementar a lógica de acesso a dados desacoplada do restante.
+
+  4. *DTO - Data Transfer Object*
+
+      Transfere dados entre diferentes camadas. O Spring Boot oferece suporte ao padrão DTO por meio de suas bibliotecas de serialização e desserialização JSON, ajuda a separar o modelo de dados e a representação do modelo faclitando a manutenção e escalabilidade.
+
+  5. *Strategy*
+
+      Usado para definir um conjunto de algoritmos que podem ser intercambiáveis. No Spring Boot, como serviços de autenticação e autorização e mudem de estratégia sem afetar outros componentes.
+
+
+  6. *Template Method*
+
+      Usado para definir o esqueleto de um algoritmo em uma classe base, deixando os detalhes da implementação para subclasses. O Spring Boot usa como os serviços de validação o que torna mais fácil reutilizar código e implementar novas funcionalidades sem precisar refatorar todo o código.
+
+  7. *Singleton*
+
+      Garantir que apenas uma instância de uma classe seja criada durante a execução do projeto. O Spring Boot usa como o contêiner IoC e o gerenciador de sessão. Isso ajuda a economizar recursos e garantir que os componentes principais estejam sempre disponíveis.
+
+  8. *Builder*
+
+      Usado para criar objetos complexos passo a passo. No Spring Boot, como os objetos de configuração  de forma programática, passo a passo, em vez de ter que lidar com XML ou JSON. Torna mais fácil criar objetos de configuração precisos e personalizados.
+
+
+  9. *Chain of Responsability*
+
+      Usado para criar uma cadeia de objetos, onde cada objeto é responsável por processar uma solicitação específica. O Spring Boot usa o padrão como filtros HTTP e interceptadores. Permite novas funcionalidades sem precisar modificar o código existente.
+
+  10. *Observer*
+
+      Usado para notificar um conjunto de objetos quando um evento ocorre. No Spring Boot, como serviços de mensageria. Como definir um conjunto de observadores que serão notificados quando uma mensagem for recebida com isso os códigos (aplicação) se tornam mais escaláveis e resilientes.
+
+## 14. Experiência
 
 1. Semana adversa e repleta de imprevistos; 
 2. Na metade do desenvolvimento a AWS começou a emitir alerta para cobrar pelos serviços :)
