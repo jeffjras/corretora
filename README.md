@@ -771,6 +771,32 @@ def lambda_handler(event, context):
         raise e
 ```
 
+**CRON / Rate como JOB para LAMBDA**
+
+  - *rate(Value Unit)*
+
+| Frequência | Expressão |
+|:-|--|
+| A cada 5 minutos | rate(5 minutes) |  |
+| A cada hora | rate(5 minutes) |
+| A cada sete dias | rate(7 days) |  |
+
+
+  - *cron(Minutes Hours Day-of-month Month Day-of-week Year)*
+
+| Frequência | Expressão |
+|:-|--|
+| 10h15 (UTC+0) todos os dias | cron(15 10 * * ? *) |  |
+| 18h (UTC+0) de segunda-feira a sexta-feira | cron(15 10 * * ? *) |
+| 8h (UTC+0) no primeiro dia do mês | cron(0 8 1 * ? *) |  |
+| A cada 10 min em dias da semana | cron(0/10 * ? * MON-FRI *) |  |
+| A cada cinco minutos entre 8h (UTC+0) e 17h55 (UTC+0) em dias da semana | cron(0/10 * ? * MON-FRI *) |  |
+| 9h (UTC+0) na primeira segunda-feira de cada mês | cron(0 9 ? * 2#1 *) |  |
+
+*Todos os eventos programados usam o fuso horário UTC+0*
+
+*https://docs.aws.amazon.com/lambda/latest/dg/services-cloudwatchevents-expressions.html*
+
 ## 12. Coreografia vs Orquestração
 
   - **Coreografia**
@@ -784,6 +810,10 @@ def lambda_handler(event, context):
   Utiliza um componente central, conhecido como orquestrador, para controlar a interação entre os serviços. O orquestrador coordena e gerencia as chamadas entre os serviços, determinando a ordem e o fluxo de execução das operações oferece maior controle e visibilidade, mas pode criar dependências e aumentar o acoplamento entre os serviços.
 
   ![Orquestração](orquestracao.png)
+
+  *https://www.infoworld.com/article/3687638/orchestration-and-choreography-in-net-microservices.html*
+
+  *https://solace.com/blog/microservices-choreography-vs-orchestration/*
 
 
 ## 13. Padrões de Projetos
@@ -831,6 +861,8 @@ def lambda_handler(event, context):
   10. *Observer*
 
       Usado para notificar um conjunto de objetos quando um evento ocorre. No Spring Boot, como serviços de mensageria. Como definir um conjunto de observadores que serão notificados quando uma mensagem for recebida com isso os códigos (aplicação) se tornam mais escaláveis e resilientes.
+
+      *https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot*
 
 ## 14. Experiência
 
