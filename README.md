@@ -868,6 +868,32 @@ def lambda_handler(event, context):
 
       *https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot*
 
+**Diagramas**
+
+  1. *Abstract Factory*
+    
+  ![abstract](abstract_factory.jpg)         
+
+  2. *Factory Method*
+  
+  ![factory](factory_method.jpg)
+
+  3. *Singleton*
+      
+  ![singleton](singleton.jpg)
+
+  4. *Facade*
+  
+  ![facade](facade.jpg)
+
+  5. *Adapter*
+       
+  ![adapter](adapter.jpg)
+
+  6. *Chain of Responsability* 
+  
+  ![chain](chain.jpg)
+
 ## 14. Experiência
 
 1. Semana adversa e repleta de imprevistos; 
