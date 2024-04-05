@@ -899,4 +899,5 @@ def lambda_handler(event, context):
 1. Semana adversa e repleta de imprevistos; 
 2. Na metade do desenvolvimento a AWS começou a emitir alerta para cobrar pelos serviços :)
 3. Em meio a dificuldades o projeto foi concebido e entregue no prazo estipulado / em pouco tempo aglomerou-se muitos detalhes e espero não ter esquecido de nenhum; 
-4. Idependente de qualquer resultado no processo, sou muito grato pela oportunidade e experiência até aqui \o//\ 🍊🚀
+
+🍊🚀
